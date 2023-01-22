@@ -1,6 +1,4 @@
-﻿using SuperBMDLib.Materials.Enums;
-
-namespace MaterialEditor.Lib;
+﻿namespace MaterialEditor.Lib;
 
 public record struct Material
 {
@@ -8,7 +6,7 @@ public record struct Material
 
     public int Flag { get; set; }
 
-    public CullMode CullMode { get; set; }
+    public string CullMode { get; set; }
 
     public bool ZCompLoc { get; set; }
 
@@ -24,21 +22,21 @@ public record struct Material
 
     public Color[] AmbientColors { get; set; }
 
-    public Color?[] LightingColors { get; set; }
+    public object LightingColors { get; set; }
 
     public TexCoord1Gen?[] TexCoord1Gens { get; set; }
 
-    public TexCoord1Gen?[] PostTexCoordGens { get; set; }
+    public object PostTexCoordGens { get; set; }
 
     public TexMatrix?[] TexMatrix1 { get; set; }
 
-    public TexMatrix?[] PostTexMatrix { get; set; }
+    public object PostTexMatrix { get; set; }
 
     public TevOrderEntry?[] TevOrders { get; set; }
 
-    public KonstColorSel[] ColorSels { get; set; }
+    public string[] ColorSels { get; set; }
 
-    public KonstColorSel[] AlphaSels { get; set; }
+    public string[] AlphaSels { get; set; }
 
     public Color?[] TevColors { get; set; }
 

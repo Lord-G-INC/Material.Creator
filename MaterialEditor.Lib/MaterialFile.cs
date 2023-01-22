@@ -2,7 +2,7 @@
 {
     public record struct MaterialFile
     {
-        private List<Material> Materials { get; set; }
+        public List<Material> Materials { get; set; }
 
         public int Length => Materials.Count;
 

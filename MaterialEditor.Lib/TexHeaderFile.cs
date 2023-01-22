@@ -5,7 +5,7 @@ public record struct TexHeaderFile
     [JsonIgnore]
     private JArray Array;
 
-    private List<TexHeader?> Headers;
+    public List<TexHeader?> Headers;
 
     public int Length => Headers.Count;
 
