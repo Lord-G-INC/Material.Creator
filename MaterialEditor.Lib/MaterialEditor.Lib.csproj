@@ -1,0 +1,18 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net7.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\SuperBMD\SuperBMDLib\SuperBMDLib.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="EndianBinaryStreams">
+      <HintPath>..\Dlls\EndianBinaryStreams.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+</Project>
