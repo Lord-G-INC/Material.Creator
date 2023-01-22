@@ -2,9 +2,9 @@
 {
     public record struct MaterialFile
     {
-        private Material[] Materials { get; set; }
+        private List<Material> Materials { get; set; }
 
-        public int Length => Materials.Length;
+        public int Length => Materials.Count;
 
         private JArray Array { get; set; }
 
@@ -23,7 +23,7 @@
         private void InitLines(string text)
         {
             Array = JArray.Parse(text);
-            Materials = Array.ToObject<Material[]>();
+            Materials = new(Array.ToObject<Material[]>());
         }
 
         public override string ToString()
