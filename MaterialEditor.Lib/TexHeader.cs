@@ -18,7 +18,7 @@
         public double MaxLOD;
         public double LodBias;
 
-        public static TexHeaderFile GetTexHeaders(JArray arr) => (arr.ToObject<TexHeader?[]>(), arr);
+        public static TexHeaderFile GetTexHeaders(JArray arr) => (new(arr.ToObject<TexHeader[]>()), arr);
 
         public static TexHeaderFile GetTexHeaders(string text) => GetTexHeaders(JArray.Parse(text));
 
