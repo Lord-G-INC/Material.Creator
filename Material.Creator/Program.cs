@@ -71,13 +71,19 @@ for (int i = 0; i < texs.Length; i++)
 
 Trace.WriteLine("");
 
-Console.WriteLine("Type in a name for the materials.json file to be output.");
-var l = Console.ReadLine();
-string res = string.IsNullOrWhiteSpace(l) ? "out_materials.json" : l;
-FileInfo omat = new(res);
-File.WriteAllText(omat.FullName, mats.ToString());
-Console.WriteLine("Type in a name for the tex_headers.json file to be output.");
-l = Console.ReadLine();
-res = string.IsNullOrWhiteSpace(l) ? "out_tex_headers.json" : l;
-FileInfo tout = new(res);
-File.WriteAllText(tout.FullName, headers.ToString());
+if (mats.Materials.Count > 0)
+{
+    Console.WriteLine("Type in a name for the materials.json file to be output.");
+    var l = Console.ReadLine();
+    string res = string.IsNullOrWhiteSpace(l) ? "out_materials.json" : l;
+    FileInfo omat = new(res);
+    File.WriteAllText(omat.FullName, mats.ToString());
+}
+if (headers.Headers.Count > 0)
+{
+    Console.WriteLine("Type in a name for the tex_headers.json file to be output.");
+    var l = Console.ReadLine();
+    string res = string.IsNullOrWhiteSpace(l) ? "out_tex_headers.json" : l;
+    FileInfo tout = new(res);
+    File.WriteAllText(tout.FullName, headers.ToString());
+}
