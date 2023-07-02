@@ -35,7 +35,7 @@ for (int i = 0; i < matfiles.Length; i++)
     }
     Console.WriteLine(buf);
     var line = Console.ReadLine() ?? string.Empty;
-    int[] nums = line.Split().Where(x => int.TryParse(x, out int _)).Select(x => int.Parse(x)).ToArray();
+    int[] nums = line.Split().Where(x => int.TryParse(x, out int _)).Select(int.Parse).ToArray();
     foreach (var num in nums)
     {
         if (num > -1 && num < mat.Materials.Count)
