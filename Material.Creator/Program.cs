@@ -61,7 +61,7 @@ for (int i = 0; i < texs.Length; i++)
     }
     Console.WriteLine(buf);
     var line = Console.ReadLine() ?? string.Empty;
-    int[] nums = line.Where(char.IsNumber).Select(x => int.Parse(x.ToString())).ToArray();
+    int[] nums = line.Split().Where(x => int.TryParse(x, out int _)).Select(int.Parse).ToArray();
     foreach (var num in nums)
     {
         if (num > -1 && num < tex.Headers.Count)
